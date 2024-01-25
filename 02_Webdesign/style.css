@@ -1,0 +1,142 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: #333444;
+}
+
+.poster {
+  width: 900px;
+  height: 450px;
+  background-image: linear-gradient(to right, #0000, #474963);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 20px 25px rgba(0, 0, 0, 0.5);
+}
+
+/*  designing Navigation bar  */
+
+.poster .nav-bar {
+  width: 100%;
+  height: 10%;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 30px;
+}
+
+.poster .nav-bar .logo {
+  color: #f00;
+  font-size: 22px;
+  cursor: pointer;
+}
+.poster .nav-bar .nav-links ul {
+  display: flex;
+  list-style: none;
+}
+
+.poster .nav-bar .nav-links ul li {
+  margin-left: 14px;
+  padding: 2px 0px;
+  transition: all 5s linear;
+}
+.poster .nav-bar .nav-links ul li a {
+  text-decoration: none;
+  color: #ffffffe1;
+  transition: color 0.35s linear;
+}
+.poster .nav-bar .nav-links ul li a:hover {
+  /* border-bottom: 2px solid white; */
+  color: red;
+}
+
+/* Left Content */
+
+.poster .content {
+  width: 100%;
+  height: 90%;
+  display: flex;
+}
+.poster .content .left-content {
+  width: 40%;
+  height: 100%;
+  background-image: #0000;
+}
+
+.poster .content .left-content .row {
+  display: flex;
+  align-items: start;
+  color: #ffffffe1;
+  padding: 5px 30px;
+}
+
+.poster .content .left-content .row span {
+  font-size: 38px;
+}
+
+.poster .content .left-content .row p {
+  font-size: 16px;
+  margin-top: 10px;
+  margin-left: 10px;
+  color: #848591;
+}
+
+.rating-star {
+  margin: 10px 30px;
+}
+.checked {
+  color: orange;
+}
+.poster .content .left-content .para {
+  margin-left: 30px;
+  margin-top: 10px;
+  line-height: 20px;
+  color: #848591;
+}
+
+.poster .content .left-content #size-text {
+  text-transform: uppercase;
+}
+
+.poster .content .left-content .size-collection {
+  display: flex;
+  margin-left: 30px;
+  margin-top: 8px;
+}
+
+.poster .content .left-content .size-collection .btn {
+  padding: 5px 10px;
+  color: #f3eaea;
+  background-color: transparent;
+  border: 2px solid #848591;
+  border-radius: 5px;
+  margin-right: 5px;
+}
+.poster .content .left-content #add-to-cart {
+  border: 2px solid #f00;
+  color: #f00;
+  font-size: 16px;
+  padding: 8px 12px;
+  border-radius: 5px;
+  margin-left: 30px;
+  margin-top: 20px;
+  background-color: transparent;
+}
+/* Right content */
+
+.poster .content .right-image {
+  width: 60%;
+  height: 100%;
+  background-image: linear-gradient(to right, #0000, #474963);
+}
+.poster .content .right-image img {
+  width: 100%;
+  margin-top: 35px;
+}
