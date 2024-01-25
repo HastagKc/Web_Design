@@ -1,3 +1,3 @@
 # Basic Image Banner
 
-![Alt text](webdesign.png)
+![Alt text](image.png)
