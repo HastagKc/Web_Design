@@ -138,5 +138,9 @@ body {
 }
 .poster .content .right-image img {
   width: 100%;
-  margin-top: 35px;
+  margin: 10px 0px 0px 20px;
+  transition: all 0.25s;
+}
+.poster .content .right-image:hover img {
+  transform: scale(1.05);
 }
