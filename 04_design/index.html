@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie Showcase</title>
+  <link rel="stylesheet" href="styles.css">
+
+  <style type="text/css">
+  	/* Add your styles here */
+.movie-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.movie-card {
+  width: 300px;
+  margin: 20px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.movie-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.movie-description {
+  margin-top: 10px;
+}
+
+  </style>
+</head>
+<body>
+  <div id="movie-container" class="movie-container"></div>
+  <script>
+  	
+
+  	const movies = [
+  {
+    name: "Watch Live Stream",
+    des: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit porro et veniam excepturi, eaque voluptatem impedit nulla laboriosam facilis ut laboriosam libero!",
+    image: "assets/img/slider-one.jpg",
+  },
+  {
+    name: "Get Update with Olympic games results",
+    des: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit porro et veniam excepturi, eaque voluptatem impedit nulla laboriosam facilis ut laboriosam libero!",
+    image: "assets/img/slider-two.jpg",
+  },
+  // Add the rest of the movies here...
+];
+
+// Access the HTML element where you want to display the movies
+const movieContainer = document.getElementById("movie-container");
+
+// Function to create and display movie cards
+function displayMovies(movies) {
+  movies.forEach(movie => {
+    // Create a movie card element
+    const movieCard = document.createElement("div");
+    movieCard.classList.add("movie-card");
+
+    // Create an image element
+    const movieImage = document.createElement("img");
+    movieImage.src = movie.image;
+    movieImage.alt = movie.name;
+    movieImage.classList.add("movie-image");
+
+    // Create a paragraph for movie description
+    const movieDescription = document.createElement("p");
+    movieDescription.classList.add("movie-description");
+    movieDescription.textContent = movie.des;
+
+    // Append image and description to the movie card
+    movieCard.appendChild(movieImage);
+    movieCard.appendChild(movieDescription);
+
+    // Append the movie card to the movie container
+    movieContainer.appendChild(movieCard);
+  });
+}
+
+// Call the displayMovies function with the movies array
+displayMovies(movies);
+
+  </script>
+</body>
+</html>
