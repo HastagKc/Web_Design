@@ -93,13 +93,21 @@ header .nav-bar .hamburger {
     top: 60px;
     gap: 0;
     flex-direction: column;
-    background-attachment: var(--background-color);
+    background-color: var(--background-color);
     width: 100%;
     text-align: center;
     transition: 0.2s;
   }
-  .nav-item {
-    margin: 16px 0;
+  header .nav-menu .nav-links {
+    margin: 20px 0;
+  }
+  header .nav-menu .nav-links a:hover {
+    color: red;
+  }
+
+  header .nav-menu .nav-links a::before {
+    content: "";
+    opacity: 0;
   }
   .nav-menu.active {
     left: 0;
