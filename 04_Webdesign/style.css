@@ -1,6 +1,8 @@
 :root {
-  --text-color: #d6c9c9;
-  --heading-size: 24px;
+  --text-color: #dfd0d0;
+  --background-color: #262626;
+  --heading-font-size: 24px;
+  --text-font-size: 18px;
 }
 
 * {
@@ -9,48 +11,97 @@
   box-sizing: border-box;
 }
 
-.nav-bar {
-  background-color: #34353a;
+header .nav-bar {
+  background-color: var(--background-color);
   width: 100vw;
-  height: 60px;
+  min-height: 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0px 30px;
+  padding: 0px 25px;
 }
-
-.nav-bar .nav-logo h2 {
-  font-size: var(--heading-size);
+header .nav-logo {
   color: var(--text-color);
+  font-size: var(--heading-font-size);
+  cursor: pointer;
 }
 
-.nav-bar .nav-links a {
+header .nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 16px;
+}
+
+header .nav-menu .nav-links a {
+  color: var(--text-color);
+  font-size: var(--text-font-size);
   text-decoration: none;
-  color: var(--text-color);
-  margin-left: 20px;
+  cursor: pointer;
   position: relative;
-  /* background-color: red; */
 }
 
-.nav-bar .nav-links a::before {
+header .nav-menu .nav-links a::before {
   content: "";
   width: 0%;
-  height: 2px;
-  background-color: red;
   position: absolute;
   left: 0;
   bottom: -10px;
-  opacity: 0;
+  background-color: red;
+  height: 2px;
   transition: all 0.5s ease-in-out;
 }
 
-.nav-bar .nav-links a:hover::before {
+header .nav-menu .nav-links a:hover::before {
   width: 100%;
-  opacity: 1;
 }
 
-@media only screen and (max-width: 760px) {
-  .nav-bar {
+header .nav-bar .hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  background-color: white;
+}
+
+@media (max-width: 760px) {
+  header .nav-bar .hamburger {
+    display: block;
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  header .nav-menu {
+    position: fixed;
+    left: -100%;
+    top: 60px;
+    gap: 0;
     flex-direction: column;
+    background-attachment: var(--background-color);
+    width: 100%;
+    text-align: center;
+    transition: 0.2s;
+  }
+  .nav-item {
+    margin: 16px 0;
+  }
+  .nav-menu.active {
+    left: 0;
   }
 }
